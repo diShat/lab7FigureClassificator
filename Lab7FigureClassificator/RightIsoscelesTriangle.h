@@ -10,4 +10,10 @@ public:
 		this->vertex2 = a2;
 		this->vertex3 = a3;
 	};
+
+	static bool checkProperties(vector<Point>& p)
+	{
+		if (RightTriangle::checkProperties(p) && IsoscelesTriangle::checkProperties(p)) return true;
+		else return false;
+	};
 };

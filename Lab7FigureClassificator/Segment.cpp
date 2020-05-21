@@ -32,7 +32,7 @@ bool Segment::isPerpendicular(Segment& a, Segment& b)
 	Point aVect(a.getA().getX() - a.getB().getX(), a.getA().getY() - a.getB().getY());
 	Point bVect(b.getA().getX() - b.getB().getX(), b.getA().getY() - b.getB().getY());	//vectors with coordinates as (x,y)
 
-	if (aVect.getX() / aVect.getY() == bVect.getX() / bVect.getY()) return true;
+	if (aVect.getX() * bVect.getX() + aVect.getY() * bVect.getY() == 0) return true;
 	else return false;
 }
 

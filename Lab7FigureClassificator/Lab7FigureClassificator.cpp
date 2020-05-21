@@ -54,10 +54,20 @@ int main()
 
 	while (intChoise > 0)
 	{
+		vector<Point> vect;
+		vect.push_back(Point(4.5, 5.33));
+		vect.push_back(Point(2, 1));
+		vect.push_back(Point(7, 1));
+		Segment s1(vect[0], vect[1]), s2(vect[1], vect[2]);
+
 		switch (intChoise)
 		{
 		case 1:
 			cout << "Polygon was created!" << endl;
+		
+			cout << Segment::getAngle(s1, s2) << endl;
+			cout << EquilateralTriangle::checkProperties(vect) << endl;
+
 			break;
 		case 2:
 			cout << "Circumference was created!" << endl;

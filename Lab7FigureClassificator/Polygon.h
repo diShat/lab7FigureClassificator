@@ -1,6 +1,7 @@
 #pragma once
 #include "AreableFigure.h"
 #include "Point.h"
+#include "Segment.h"
 #include <vector>
 
 class Polygon : public AreableFigure
@@ -12,6 +13,7 @@ public:
 	float getPerimeter();	
 	virtual float getArea() { return 0; };
 	int countVertex();
+	static bool checkProperties(vector<Point>& p) {};
 protected:
 	vector<Point> vertexArray;
 };

@@ -1,6 +1,7 @@
 #pragma once
 #include "Polygon.h"
 
+
 class Triangle : public Polygon
 {
 public:
@@ -10,6 +11,11 @@ public:
 		this->vertex1 = a1;
 		this->vertex2 = a2;
 		this->vertex3 = a3;
+	};
+	static bool checkProperties(vector<Point>& p)
+	{
+		if (p.size() == 3) return true;
+		else return false;
 	};
 
 protected:
