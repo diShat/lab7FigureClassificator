@@ -6,10 +6,6 @@ Point::Point(float a, float b)
 	this->y = b;
 }
 
-Point::~Point()
-{
-}
-
 float Point::getX()
 {
 	return this->x;

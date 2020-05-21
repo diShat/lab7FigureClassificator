@@ -29,7 +29,3 @@ public:
 protected:
 	float radius;
 };
-
-class Circle
-{
-};

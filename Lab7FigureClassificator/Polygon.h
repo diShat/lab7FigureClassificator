@@ -6,11 +6,11 @@
 class Polygon : public AreableFigure
 {
 public:
-	Polygon();
+	Polygon() {};
 	Polygon(vector<Point> p);
 	vector<Point> getPoints();
-	float getPerimeter();
-	virtual float getArea() = 0;	
+	float getPerimeter();	
+	virtual float getArea() { return 0; };
 	int countVertex();
 protected:
 	vector<Point> vertexArray;

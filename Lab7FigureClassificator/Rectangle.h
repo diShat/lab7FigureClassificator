@@ -4,6 +4,7 @@
 class Rectangle : public Paralelogram, public IsoscelesTrapezoid
 {
 public:
+	Rectangle() {};
 	Rectangle(Point a1, Point a2, Point a3, Point a4)
 	{
 		this->vertex1 = a1;

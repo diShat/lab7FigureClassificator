@@ -4,6 +4,7 @@
 class Segment : public Figure
 {
 public:
+	Segment() {};
 	Segment(Point a1, Point a2);
 	float getLength();
 	static bool isParallel(Segment& a, Segment& b);
@@ -15,8 +16,3 @@ private:
 	Point vertex1;
 	Point vertex2;
 };
-
-class Segment
-{
-};
-

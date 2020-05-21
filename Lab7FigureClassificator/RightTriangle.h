@@ -3,6 +3,7 @@
 class RightTriangle : virtual public Triangle
 {
 public:
+	RightTriangle() {};
 	RightTriangle(Point a1, Point a2, Point a3)
 	{
 		this->vertex1 = a1;

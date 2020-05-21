@@ -14,8 +14,8 @@ float Segment::getLength()
 
 bool Segment::isParallel(Segment& a, Segment& b)
 {
-	Point aVect(a.getA().getX - a.getB().getX, a.getA().getY - a.getB().getY);
-	Point bVect(b.getA().getX - b.getB().getX, b.getA().getY - b.getB().getY);	//vectors with coordinates as (x,y)
+	Point aVect(a.getA().getX() - a.getB().getX(), a.getA().getY() - a.getB().getY());
+	Point bVect(b.getA().getX() - b.getB().getX(), b.getA().getY() - b.getB().getY());	//vectors with coordinates as (x,y)
 	
 	if (aVect.getX() == aVect.getY() or bVect.getX() == bVect.getY()) return false;
 	else
@@ -29,8 +29,8 @@ bool Segment::isParallel(Segment& a, Segment& b)
 
 bool Segment::isPerpendicular(Segment& a, Segment& b)
 {
-	Point aVect(a.getA().getX - a.getB().getX, a.getA().getY - a.getB().getY);
-	Point bVect(b.getA().getX - b.getB().getX, b.getA().getY - b.getB().getY);	//vectors with coordinates as (x,y)
+	Point aVect(a.getA().getX() - a.getB().getX(), a.getA().getY() - a.getB().getY());
+	Point bVect(b.getA().getX() - b.getB().getX(), b.getA().getY() - b.getB().getY());	//vectors with coordinates as (x,y)
 
 	if (aVect.getX() / aVect.getY() == bVect.getX() / bVect.getY()) return true;
 	else return false;
@@ -38,8 +38,8 @@ bool Segment::isPerpendicular(Segment& a, Segment& b)
 
 float Segment::getAngle(Segment& a, Segment& b)
 {
-	Point aVect(a.getA().getX - a.getB().getX, a.getA().getY - a.getB().getY);
-	Point bVect(b.getA().getX - b.getB().getX, b.getA().getY - b.getB().getY);	//vectors with coordinates as (x,y)
+	Point aVect(a.getA().getX() - a.getB().getX(), a.getA().getY() - a.getB().getY());
+	Point bVect(b.getA().getX() - b.getB().getX(), b.getA().getY() - b.getB().getY());	//vectors with coordinates as (x,y)
 
 	float productVect = aVect.getX() * bVect.getX() + aVect.getY() * bVect.getY();
 	float magnitudeA = sqrt(pow(aVect.getX(), 2) + pow(aVect.getY(), 2));

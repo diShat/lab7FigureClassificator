@@ -4,6 +4,7 @@
 class Triangle : public Polygon
 {
 public:
+	Triangle() {};
 	Triangle(Point a1, Point a2, Point a3)
 	{
 		this->vertex1 = a1;

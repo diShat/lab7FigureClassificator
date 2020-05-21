@@ -3,6 +3,7 @@
 class Kite : virtual public Quadrilateral
 {
 public:
+	Kite() {};
 	Kite(Point a1, Point a2, Point a3, Point a4)
 	{
 		this->vertex1 = a1;

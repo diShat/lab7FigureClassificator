@@ -30,8 +30,3 @@ protected:
 	float radius1;
 	float radius2;
 };
-
-class Ellipce
-{
-};
-

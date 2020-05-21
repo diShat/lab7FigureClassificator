@@ -3,8 +3,9 @@
 class Point : public Figure
 {
 public:
-	Point();
+	Point() {};
 	Point(float a, float b);
+	~Point() {};
 	float getX();
 	float getY();
 
@@ -14,8 +15,3 @@ protected:
 	float x;
 	float y;
 };
-
-class Point
-{
-};
-

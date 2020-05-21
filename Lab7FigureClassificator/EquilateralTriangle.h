@@ -10,8 +10,3 @@ public:
 		this->vertex3 = a3;
 	};
 };
-
-class EquilateralTriangle
-{
-};
-

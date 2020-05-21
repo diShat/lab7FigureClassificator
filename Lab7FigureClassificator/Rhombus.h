@@ -5,6 +5,7 @@
 class Rhombus : public Kite, public Paralelogram
 {
 public:
+	Rhombus() {};
 	Rhombus(Point a1, Point a2, Point a3, Point a4)
 	{
 		this->vertex1 = a1;
