@@ -1,8 +1,8 @@
 #include "Circumference.h"
 
-Circumference::Circumference(Point a, vector<float> r)
+Circumference::Circumference(Point a, vector<Point> r)
 {
 	this->centerPoint = a;
-	this->radiusArray = r;
+	this->radiusPointArray = r;
 }
 

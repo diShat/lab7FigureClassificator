@@ -9,10 +9,13 @@ class Circumference : public AreableFigure
 {
 public:
 	Circumference() {};
-	Circumference(Point a, vector<float> r);
+	Circumference(Point a, vector<Point> r);
+	Point getCenter() { return this->centerPoint; };
 	virtual float getLength() { return 0; };
 	virtual float getArea() { return 0; };
+	static bool checkProperties(Point& a, vector<Point>& rad) {};
+
 protected:
 	Point centerPoint;
-	vector<float> radiusArray;
+	vector<Point> radiusPointArray;
 };

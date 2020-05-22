@@ -47,9 +47,6 @@
     <ClInclude Include="Circumference.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Ellipce.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="EquilateralTriangle.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>

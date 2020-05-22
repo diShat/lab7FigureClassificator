@@ -10,7 +10,7 @@ public:
 	float getY();
 
 	float distanceFrom(Point a);
-	float diatanceFrom(float a, float b);
+	float distanceFrom(float a, float b);
 protected:
 	float x;
 	float y;

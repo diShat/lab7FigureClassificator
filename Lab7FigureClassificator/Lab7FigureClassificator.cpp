@@ -5,7 +5,6 @@
 #include "RightIsoscelesTriangle.h"
 #include "Square.h"
 #include "Circle.h"
-#include "Ellipce.h"
 
 using namespace std;
 
@@ -39,7 +38,7 @@ Polygon PolygonCreator(vector<Point> p)
 {
 	return Polygon(p);
 }
-Circumference CircumferenceCreator(Point a, vector<float> rad)
+Circumference CircumferenceCreator(Point a, vector<Point> rad)
 {
 	return Circumference(a, rad);
 }
@@ -54,30 +53,27 @@ int main()
 
 	while (intChoise > 0)
 	{
+		Point c(0, 0);
 		vector<Point> vect;
-		vect.push_back(Point(7, 0));
-		vect.push_back(Point(10, 2));
-		vect.push_back(Point(8, 5));
-		vect.push_back(Point(5, 3));
-		Segment s1(vect[0], vect[1]), s2(vect[1], vect[2]), s3(vect[2], vect[3]), s4(vect[3], vect[0]);
+		vect.push_back(Point(-4, 0));
+		vect.push_back(Point(5, 0));
 
 		switch (intChoise)
 		{
 		case 1:
 			cout << "Polygon was created!" << endl;
-		
-			cout << Segment::isParallel(s2, s4) << endl;
-
-			cout << Square::checkProperties(vect) << endl;
-
 			break;
 		case 2:
 			cout << "Circumference was created!" << endl;
+
+			cout << Circle::checkProperties(c, vect) << endl;
 			break;
 		default:
 			cout << "No such option!" << endl;
 			break;
 		}
+
 		getChoise(intChoise);
 	}
+
 }

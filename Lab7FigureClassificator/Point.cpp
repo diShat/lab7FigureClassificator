@@ -21,7 +21,7 @@ float Point::distanceFrom(Point a)
 	return sqrt(pow(this->x - a.getX(), 2) + pow(this->y - a.getY(), 2));
 }
 
-float Point::diatanceFrom(float a, float b)
+float Point::distanceFrom(float a, float b)
 {
 	return sqrt(pow(this->x - a, 2) + pow(this->y - b, 2));
 }

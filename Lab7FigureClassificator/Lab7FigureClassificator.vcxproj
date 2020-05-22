@@ -157,7 +157,6 @@
     <ClInclude Include="AreableFigure.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Circumference.h" />
-    <ClInclude Include="Ellipce.h" />
     <ClInclude Include="EquilateralTriangle.h" />
     <ClInclude Include="Figure.h" />
     <ClInclude Include="IsoscelesTrapezoid.h" />
