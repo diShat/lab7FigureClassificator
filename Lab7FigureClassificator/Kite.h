@@ -11,4 +11,11 @@ public:
 		this->vertex3 = a3;
 		this->vertex4 = a4;
 	};
+
+	static bool checkProperties(vector<Point>& p)
+	{
+		Segment d1(p[0], p[2]), d2(p[1], p[3]);
+		if (Quadrilateral::checkProperties(p) && Segment::isPerpendicular(d1,d2)) return true;
+		else return false;
+	};
 };

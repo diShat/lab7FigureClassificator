@@ -11,6 +11,13 @@ public:
 		this->vertex3 = a3;
 		this->vertex4 = a4;
 	};
+
+	static bool checkProperties(vector<Point>& p)
+	{
+		if (p.size() == 4) return true;
+		else return false;
+	};
+
 protected:
 	Point vertex1;
 	Point vertex2;

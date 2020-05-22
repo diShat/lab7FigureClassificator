@@ -15,4 +15,12 @@ public:
 	{
 		this->Quadrilateral::vertexArray = p;
 	};
+
+	static bool checkProperties(vector<Point>& p)
+	{
+		Segment s1(p[0], p[1]), s2(p[1], p[2]), s3(p[2], p[3]), s4(p[3], p[0]);
+
+		if (Rectangle::checkProperties(p) && Rhombus::checkProperties(p)) return true;
+		else return false;
+	};
 };
