@@ -164,6 +164,7 @@ int main()
 			break;
 		}
 
+		cout << endl;
 		cout << "1)Create a polygon.\n2)Create a circumference.\n0)Exit." << endl;
 		
 		getChoise(intChoise);
