@@ -4,12 +4,10 @@ class IsoscelesTrapezoid : public Trapezoid
 {
 public:
 	IsoscelesTrapezoid() {};
-	IsoscelesTrapezoid(Point a1, Point a2, Point a3, Point a4)
+	IsoscelesTrapezoid(vector<Point> p)
 	{
-		this->vertex1 = a1;
-		this->vertex2 = a2;
-		this->vertex3 = a3;
-		this->vertex4 = a4;
+		if (p.size() != 4) { throw p; }
+		this->vertexArray = p;
 	};
 
 	static bool checkProperties(vector<Point>& p)
@@ -19,4 +17,6 @@ public:
 		if (Quadrilateral::checkProperties(p) && (Segment::isParallel(s1, s3) && s2.getLength()==s4.getLength() || Segment::isParallel(s2, s4) && s1.getLength() == s3.getLength())) return true;
 		else return false;
 	};
+
+	virtual string getName() { return "Isosceles trapezoid"; };
 };

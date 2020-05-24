@@ -4,16 +4,10 @@
 class Square : public Rhombus, public Rectangle
 {
 public:
-	Square(Point a1, Point a2, Point a3, Point a4)
-	{
-		this->Quadrilateral::vertex1 = a1;
-		this->Quadrilateral::vertex2 = a2;
-		this->Quadrilateral::vertex3 = a3;
-		this->Quadrilateral::vertex4 = a4;
-	};
 	Square(vector<Point> p)
 	{
-		this->Quadrilateral::vertexArray = p;
+		if (p.size() != 4) { throw p; }
+		this->vertexArray = p;
 	};
 
 	static bool checkProperties(vector<Point>& p)
@@ -23,4 +17,7 @@ public:
 		if (Rectangle::checkProperties(p) && Rhombus::checkProperties(p)) return true;
 		else return false;
 	};
+
+	virtual string getName() { return "Square"; };
+
 };

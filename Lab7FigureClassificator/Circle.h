@@ -37,4 +37,7 @@ public:
 			return k;
 		}
 	};
+
+	virtual string getName() { return "Circle"; };
+
 };

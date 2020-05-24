@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <iomanip>
 #include <vector>
+#include <string>
 #include "EquilateralTriangle.h"
 #include "RightIsoscelesTriangle.h"
 #include "Square.h"
@@ -33,14 +34,91 @@ void getChoise(T& choice)
 	cin.clear();
 	cin.ignore(INT_MAX, '\n');
 }
+vector<Point> fillFromConsole()
+{
+	vector<Point> vect;
+	char charChoise;
+	float x, y;
+	cout << "--Enter point coordinates: " << endl;
+	
+	while (!(cin >> x >> y))
+	{
+		//Report error
+		cout << "ERROR: Faulty input. Try again...";
+		//Clear stream
+		cin.clear();
+		cin.ignore(INT_MAX, '\n');
+	}
 
-Polygon PolygonCreator(vector<Point> p)
-{
-	return Polygon(p);
+	vect.push_back(Point(x, y));
+
+	cout << "Want to enter another point? (y/n): ";
+	getChoise(charChoise);
+	while (charChoise!='n')
+	{
+		switch (charChoise)
+		{
+		case 'y':
+			cout << "--Enter point coordinates: " << endl;
+
+			while (!(cin >> x >> y))
+			{
+				//Report error
+				cout << "ERROR: Faulty input. Try again...";
+				//Clear stream
+				cin.clear();
+				cin.ignore(INT_MAX, '\n');
+			}
+			
+			vect.push_back(Point(x, y));
+			break;
+		default:
+			cout << "No such option!" << endl;
+			break;
+		}
+		cout << "Want to enter another point? (y/n): ";
+		getChoise(charChoise);
+	}
+	cout << "Vector was created!" << vect.size() << endl;
+	return vect;
 }
-Circumference CircumferenceCreator(Point a, vector<Point> rad)
+
+Polygon* PolygonCreator(vector<Point> p)
 {
-	return Circumference(a, rad);
+	//checking polygon properties
+	try 
+	{
+		if (p.size() < 3) { throw p; }
+		if (p.size() == 3)
+		{
+			if (EquilateralTriangle::checkProperties(p)) { return &EquilateralTriangle(p); }
+			if (RightIsoscelesTriangle::checkProperties(p)) { return &RightIsoscelesTriangle(p); }
+			if (IsoscelesTriangle::checkProperties(p)) { return &IsoscelesTriangle(p); }
+			if (RightTriangle::checkProperties(p)) { return &RightTriangle(p); }
+			return &Triangle(p);
+		}
+		if (p.size() == 4)
+		{
+			if (Square::checkProperties(p)) { return &Square(p); }
+			if (Rhombus::checkProperties(p)) { return &Rhombus(p); }
+			if (Rectangle::checkProperties(p)) { return &Rectangle(p); }
+			if (Paralelogram::checkProperties(p)) { return &Paralelogram(p); }
+			if (IsoscelesTrapezoid::checkProperties(p)) { return &IsoscelesTrapezoid(p); }
+			if (Kite::checkProperties(p)) { return &Kite(p); }
+			if (Trapezoid::checkProperties(p)) { return &Trapezoid(p); }
+			return &Quadrilateral(p);
+		}
+		else return &Polygon(p);
+	}
+	catch (vector<Point> v)
+	{
+		cout << "ERROR: Can't create object. Inappropriate variable was given." << endl;
+	}
+}
+Circumference* CircumferenceCreator(Point a, vector<Point> rad)
+{
+	if (Circle::checkProperties(a, rad)) { return &Circle(a, rad); }
+	return &Circumference(a, rad);
 }
 
 int main()
@@ -53,26 +131,41 @@ int main()
 
 	while (intChoise > 0)
 	{
-		Point c(0, 0);
-		vector<Point> vect;
-		vect.push_back(Point(-4, 0));
-		vect.push_back(Point(5, 0));
-
+		vector<Point> v;
+		Point a;
+		float x, y;
+		Polygon* poly;
+		Circumference* circ;
 		switch (intChoise)
 		{
 		case 1:
-			cout << "Polygon was created!" << endl;
+			v = fillFromConsole();
+			poly = PolygonCreator(v);
+			cout << "You created " << (*poly).getName() << "." << endl;
 			break;
 		case 2:
-			cout << "Circumference was created!" << endl;
+			cout << "Enter center point coordinates: ";
 
-			cout << Circle::checkProperties(c, vect) << endl;
+			while (!(cin >> x >> y))
+			{
+				//Report error
+				cout << "ERROR: Faulty input. Try again...";
+				//Clear stream
+				cin.clear();
+				cin.ignore(INT_MAX, '\n');
+			}
+			a = Point(x, y);
+			v = fillFromConsole();
+			circ = CircumferenceCreator(a, v);
+			cout << "You created " << (*circ).getName() << "." << endl;
 			break;
 		default:
 			cout << "No such option!" << endl;
 			break;
 		}
 
+		cout << "1)Create a polygon.\n2)Create a circumference.\n0)Exit." << endl;
+		
 		getChoise(intChoise);
 	}
 

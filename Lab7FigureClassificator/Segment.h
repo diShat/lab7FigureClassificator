@@ -10,6 +10,7 @@ public:
 	static bool isParallel(Segment& a, Segment& b);
 	static bool isPerpendicular(Segment& a, Segment& b);
 	static float getAngle(Segment& a, Segment& b);
+	virtual string getName() { return "Segment"; };
 	Point getA();
 	Point getB();
 private:

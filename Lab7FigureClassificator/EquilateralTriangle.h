@@ -3,11 +3,10 @@
 class EquilateralTriangle : public IsoscelesTriangle
 {
 public:
-	EquilateralTriangle(Point a1, Point a2, Point a3)
+	EquilateralTriangle(vector<Point> p)
 	{
-		this->vertex1 = a1;
-		this->vertex2 = a2;
-		this->vertex3 = a3;
+		if (p.size() != 3) { throw p; }
+		this->vertexArray = p;
 	};
 
 	static bool checkProperties(vector<Point>& p)
@@ -16,4 +15,5 @@ public:
 		if (s1.getLength() == s2.getLength() == s3.getLength()) return true;
 		else return false;
 	};
+	virtual string getName() { return "Equilateral triangle"; };
 };

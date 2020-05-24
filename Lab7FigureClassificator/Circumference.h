@@ -13,6 +13,7 @@ public:
 	Point getCenter() { return this->centerPoint; };
 	virtual float getLength() { return 0; };
 	virtual float getArea() { return 0; };
+	virtual string getName() { return "Circumference"; };
 	static bool checkProperties(Point& a, vector<Point>& rad) {};
 
 protected:

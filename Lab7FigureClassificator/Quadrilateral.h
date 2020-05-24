@@ -4,12 +4,10 @@ class Quadrilateral : public Polygon
 {
 public:
 	Quadrilateral() {};
-	Quadrilateral(Point a1, Point a2, Point a3, Point a4)
+	Quadrilateral(vector<Point> p)
 	{
-		this->vertex1 = a1;
-		this->vertex2 = a2;
-		this->vertex3 = a3;
-		this->vertex4 = a4;
+			if (p.size() != 4) { throw p; }
+			this->vertexArray = p;
 	};
 
 	static bool checkProperties(vector<Point>& p)
@@ -18,10 +16,7 @@ public:
 		else return false;
 	};
 
-protected:
-	Point vertex1;
-	Point vertex2;
-	Point vertex3;
-	Point vertex4;
+	virtual string getName() { return "Quadrilateral"; };
+
 };
 

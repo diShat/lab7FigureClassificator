@@ -12,6 +12,7 @@ public:
 	vector<Point> getPoints();
 	float getPerimeter();	
 	virtual float getArea() { return 0; };
+	virtual string getName() { return "Polygon"; };
 	int countVertex();
 	static bool checkProperties(vector<Point>& p) {};
 protected:
